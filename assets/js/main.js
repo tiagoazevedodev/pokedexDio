@@ -1,30 +1,30 @@
-//const offset = 0; 
-//const limit = 10;
+const offset = 0; 
+const limit = 8;
 
-function convertPokemonToHTML(pokemon, index) {
+function convertPokemonTypesToLi(pokemonTypes) {
+    return pokemonTypes.map((typeSlot) => `<li class="type">${typeSlot.type.name}</li>`)
+} 
+
+function convertPokemonToHTML(pokemon) {
     return `
         <li class="pokemon">
-            <span class="number">#001</span>
+            <span class="number">#${pokemon.order}</span>
             <span class="name">${pokemon.name}</span>
             <div class="detail">
                 <ol class="types">
-                    <li class="type">Grass</li>
-                    <li class="type">Poison</li>
+                    ${convertPokemonTypesToLi(pokemon.types).join("")}
                 </ol>
-                <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/${index}.svg" alt="${pokemon.name}">
+                <img src="${pokemon.sprites.other.dream_world.front_default}" alt="${pokemon.name}">
             </div>
         </li>
     `
 }
 
-const pokemonList = document.getElementById("pokemonList")
+document.addEventListener("DOMContentLoaded", function() {
+    const pokemonList = document.getElementById("pokemonList")
+});
 
 
-pokeApi.getPokemons().then((pokemons) => {
-        for (let i = 0; i < pokemons.length; i++) {
-            const pokemon = pokemons[i];
-            pokemonList.innerHTML += convertPokemonToHTML(pokemon, i+1)
-        }
-        
-    })
-    .catch((error) => console.error("deu erro "+error))
+pokeApi.getPokemons(limit, offset).then((pokemons = []) => {
+    pokemonList.innerHTML += pokemons.map(convertPokemonToHTML).join("")
+})
