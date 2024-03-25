@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-    <script src="/assets/js/poke-api.js"></script>
+        <script src="/assets/js/pokemon-modelo.js"></script>
+        <script src="/assets/js/poke-api.js"></script>
+        <script src="/assets/js/main.js"></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pokedex</title>
@@ -17,10 +19,16 @@
     <section class="content">
         <h1>Pokedex</h1>
         <ol class="pokemons" id="pokemonList">
+            <img alt="Loading...">
             
             <!-- Pokemons here -->
         </ol>
+
+        <div class="pagination">
+            <button id="loadMoreButton" type="button">
+                Load More
+            </button>
+        </div>
     </section>
-    <script src="/assets/js/main.js"></script>
 </body>
 </html>

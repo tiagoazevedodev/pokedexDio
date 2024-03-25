@@ -6,11 +6,18 @@
     margin: 0;
 }
 
+.name {
+    text-transform: capitalize;
+    font-size: 1.25rem;
+    font-weight: bold;
+    -webkit-text-stroke-width: .25px;
+    -webkit-text-stroke-color: #000;
+    
+}
 
 .pokemon {
     margin: .5rem;
     padding: 1rem 1rem;
-    background-color: #49d0b0;
     color: white;
     border-radius: 1rem;
     display: flex;
@@ -19,13 +26,14 @@
 
 .pokemon .number {
     text-align: right;
-    color: #70bdab;
+    color: #f6f8fc9f;
 }
 
 .pokemon .detail {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    text-transform: capitalize;
     
 }
 
@@ -35,12 +43,13 @@
     list-style: none;
 }
 .pokemon .detail .types .type {
-    background-color: #61e1ca;
     border-radius: 1rem;
     color: white;
     padding: .25rem .5rem;
     margin: .25rem 0;
     font-size: .625rem;
+    display: flex;
+    justify-content: center;
 }
 
 
@@ -49,6 +58,97 @@
     height: 70px;
     padding-top: .5rem;
     align-self: flex-end;
+}
+
+.normal {
+    background-color: #a8a878d2;
+}
+.grass {
+    background-color: rgba(61, 126, 18, 0.548);
+}
+
+.fire {
+    background-color: #f7796bcb;
+}
+
+.water {
+    background-color: #678feecb;
+}
+
+.electric {
+    background-color: #ffee01a8;
+}
+
+.ice {
+    background-color: #51c4e7c9;
+}
+
+.ground {
+    background-color: #e2bf65c9;
+}
+
+.flying {
+    background-color: #aa8ff3c9;
+}
+
+.poison {
+    background-color: #a040a0c9;
+}
+
+.fighting {
+    background-color: #c03028bd;
+}
+
+.psychic {
+    background-color: #f65686cb;
+}
+
+.dark {
+    background-color: #705848c0;
+}
+
+.rock {
+    background-color: #b8a138c4;
+}
+
+.bug {
+    background-color: #a9b8209d;
+}
+
+.ghost {
+    background-color: #715898c5;
+}
+
+.steel {
+    background-color: #b8b8d0c0;
+}
+
+.dragon {
+    background-color: #7238f8c2;
+}
+
+.fairy {
+    background-color: #ee99abb7;
+}
+
+.pagination {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 1rem;
+}
+
+.pagination button {
+    border: none;
+    background-color: #777777;
+    color: #000;
+    padding: .5rem;
+    border-radius: 1rem;
+    margin: 0 .25rem;
+    cursor: pointer;
+
 }
 
 
